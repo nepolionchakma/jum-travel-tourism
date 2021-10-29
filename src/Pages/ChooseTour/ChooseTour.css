@@ -1,0 +1,9 @@
+.chooseTour{
+    background-image: url(https://i.ibb.co/rGT2Gcb/choosetour.jpg);
+    background-size: cover;
+    position: sticky;
+    background-position: 50% 89px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}

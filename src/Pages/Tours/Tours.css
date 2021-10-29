@@ -1,0 +1,41 @@
+.tourSearchBanner{
+    background-image: url(https://i.ibb.co/LzGwh7H/destitnation-title-img-1a.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.tourSearchBanner h2{
+    padding: 150px 100px 150px 100px;
+    font-size: 90px;
+    font-weight: bold;
+    color: white;
+}
+.tourImg{
+    overflow: hidden;
+}
+.tourImg img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.tourImg span {
+    position: absolute;
+    left: 4%;
+    z-index: 1;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 12px;
+    background-color: #6191c9c4;
+    border-radius: 0px 15px;
+}
+.orderNow{
+    display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  border: 2px dashed rgba(114, 186, 94, 0.35);
+  background: rgba(114, 186, 94, 0.05);
+}
+.orderNowSticky{
+    position: sticky;
+    top: 10em;
+}
