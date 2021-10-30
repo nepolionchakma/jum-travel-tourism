@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import HomeOffer from '../HomeOffer/HomeOffer';
+import "./HomeOffers.css"
 
 const Offer = () => {
     const [services, setServices] = useState([]);
@@ -11,7 +12,7 @@ const Offer = () => {
             .then(data => setServices(data))
     })
     return (
-        <div>
+        <div className="homeOffers">
             {
                 services.length === 0 ?
                     <div className="d-flex justify-content-center py-5">
