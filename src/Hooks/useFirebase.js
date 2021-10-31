@@ -10,7 +10,6 @@ const useFirebase = () => {
 
     const [name, setName] = useState();
     const [user, setUser] = useState({});
-    console.log(user);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -132,13 +131,14 @@ const useFirebase = () => {
     }, []);
 
 
-    // // all fake data
-    // const [services, setService] = useState([]);
-    // useEffect(() => {
-    //     fetch("./fakeservicesdata.json")
-    //         .then(res => res.json())
-    //         .then(data => setService(data))
-    // }, []);
+    // all fake data
+    const [services, setService] = useState([]);
+    useEffect(() => {
+        fetch("./fakedata.json")
+            .then(res => res.json())
+            .then(data => setService(data))
+    }, []);
+    console.log(services)
 
 
     // const [doctors, setDoctor] = useState([]);
@@ -165,7 +165,7 @@ const useFirebase = () => {
         handleGoogleSignIn,
         handleGithubSignIn,
         handleSignOut,
-        // services,
+        services,
         // success,
         // doctors,
         // isLogIn,

@@ -9,9 +9,11 @@ import Home from './Pages/Home/Home';
 import Tours from './Pages/Tours/Tours';
 import Header from './Pages/Header/Header';
 import AuthProvider from './Context/AuthProvider';
-import PrivateRoute from './PrivateRoute/PrivateRoute';
+// import Route from './Route/Route';
 import Login from './Pages/LogIn/LogIn';
 import SignUp from './Pages/SignUp/SignUp';
+import TourBooking from './Pages/TourBooking/TourBooking';
+import MyOrder from './Pages/MyOrder/MyOrder';
 
 function App() {
   return (
@@ -26,9 +28,15 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <PrivateRoute path="/tours">
+            <Route path="/tours">
               <Tours></Tours>
-            </PrivateRoute>
+            </Route>
+            <Route path="/my-order">
+              <MyOrder></MyOrder>
+            </Route>
+            <Route path="/tour-booking/:id">
+              <TourBooking></TourBooking>
+            </Route>
             <Route path="/signup">
               <SignUp></SignUp>
             </Route>
