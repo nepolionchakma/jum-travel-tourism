@@ -7,22 +7,24 @@ import "./HomeOffer.css"
 import { Link } from 'react-router-dom';
 
 const HomeOffer = (props) => {
-    const { name, img, price, _id } = props.service
+    const { name, img, price, _id, rate, country, details } = props.service
     return (
-        <div className="col-lg-4 homeOffer ">
+        <div className="col-lg-4 homeOffer p-0">
 
             <div className="m-3 homeOfferCard shadow rounded p-3">
 
                 <div className="homeOfferImg">
                     <img src={img} alt="" />
+                    <p>{rate} <FontAwesomeIcon className="text-warning" icon={faStarHalfAlt} /></p>
                 </div>
                 <div className="homeOfferCardIn">
-                    <h2 className="fw-bold my-3">{name}</h2>
-                    <div className="">
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, doloribus?</h5>
+                    <h3 className="my-3 text-start limit-1">{name}</h3>
+                    <p className="text-start">{country}</p>
+                    <div className="text-start">
+                        <p className="limit-4 fs-5 text-muted">{details}</p>
                     </div>
 
-                    <div className="d-flex justify-content-evenly align-items-center">
+                    <div className="d-flex justify-content-between align-items-center">
                         <Link to={`/services/${_id}`} className="btn btn-success">Booking Now</Link>
                         <h5 className="my-auto">${price}</h5>
                         <div>

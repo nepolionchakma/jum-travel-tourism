@@ -9,7 +9,7 @@ import "./Tours.css"
 
 const Tours = () => {
     const { services } = useAuth();
-    const [cart, setCart, handleCart] = useCart();
+    const [cart, setCart, handleCart, handleRemove] = useCart();
 
     return (
         <div>
@@ -17,7 +17,7 @@ const Tours = () => {
                 <h2 className="text-start">Tour Search</h2>
             </div>
 
-            <div className="row m-0 p-5">
+            <div className="row m-0 p-5 justify-content-between">
                 <div className="col-lg-8 ">
 
                     {services.length === 0 ?
@@ -27,14 +27,15 @@ const Tours = () => {
                             </div>
                         </div>
                         :
-                        <div className="">
+                        <div className="row m-0">
 
                             {
                                 services.map(service =>
                                     <Tour
-                                        key={service.key}
+                                        key={service._id}
                                         service={service}
                                         handleCart={handleCart}
+                                        handleRemove={handleRemove}
                                     >
 
                                     </Tour>
@@ -43,9 +44,10 @@ const Tours = () => {
                         </div>
                     }
                 </div>
-                <div className="col-lg-4 orderNow d-flex my-5">
+                <div className="col-lg-3 orderNow d-flex my-5">
                     <div className="orderNowSticky">
                         <Cart
+
                             cart={cart}
                         ></Cart>
 

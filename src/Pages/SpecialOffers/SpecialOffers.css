@@ -1,15 +1,27 @@
-.spbg{
-    background-image: url(https://i.ibb.co/7NZQ7fS/flat-lay-white-planes-with-copy-space.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll;
-}
-
 
 .customFont{
     font-family: 'Delius Unicase', cursive;
 font-family: 'Luckiest Guy', cursive;
 }
+.specialOffering-right-img {
+   background-image: url(https://i.ibb.co/vQn5zkh/25640309.jpg);
+   background-size: cover;
+   width: 100%;
+}
 .specialOffering-right {
-    background-color: #62bedc;
+    overflow: hidden;
+    
+    transition: .3s;
+}
+.specialOffering-right p{
+    transition: .4s;
+}
+.specialOffering-right:hover p{
+    margin-left: 30px;
+    transition: .4s;
+}
+.specialOffering-right:hover {
+    transform: scale(1.02,1.01);
+    transition: .3s;
+   
 }

@@ -40,93 +40,84 @@ const SpecialOffers = () => {
     const daysDuration = days * daySeconds;
 
     return (
-        <div className="p-5 specialOffering text-white" >
+        <div className="p-5 specialOffering " >
             <div className="row justify-content-evenly">
                 <div className="col-lg-7 ">
-                    <div className="row spbg">
-                        <h1 className="m-5 customFont">Special Offers</h1>
-                        <p className="m-5">Find Your Perfect Hotels Get the best prices on 20,000+ properties the best prices on</p>
+                    <div className="row justify-content-center align-items-center p-2 mx-auto text-warning">
+
+                        <h1 className="customFont mt-5">Special Offers</h1>
+                        <p className="">Find Your Perfect Hotels Get the best prices on 20,000+ properties the best prices on</p>
+                        <div className="col-lg-3 col-md-3 col-sm-6 my-4 justify-content-center d-flex">
+                            <CountdownCircleTimer
+                                {...timerProps}
+                                colors={[["#7E2E84"]]}
+                                duration={daysDuration}
+                                initialRemainingTime={remainingTime}
+                            >
+                                {({ elapsedTime }) =>
+                                    renderTime("days", getTimeDays(daysDuration - elapsedTime))
+                                }
+                            </CountdownCircleTimer>
+
+                        </div>
+                        <div className="col-lg-3 col-md-3 col-sm-6 my-4 justify-content-center d-flex">
+                            <CountdownCircleTimer
+                                {...timerProps}
+                                colors={[["#D14081"]]}
+                                duration={daySeconds}
+                                initialRemainingTime={remainingTime % daySeconds}
+                                onComplete={(totalElapsedTime) => [
+                                    remainingTime - totalElapsedTime > hourSeconds
+                                ]}
+                            >
+                                {({ elapsedTime }) =>
+                                    renderTime("hours", getTimeHours(daySeconds - elapsedTime))
+                                }
+                            </CountdownCircleTimer>
+                        </div>
+                        <div className="col-lg-3 col-md-3 col-sm-6 my-4 justify-content-center d-flex">
+                            <CountdownCircleTimer
+                                {...timerProps}
+                                colors={[["#EF798A"]]}
+                                duration={hourSeconds}
+                                initialRemainingTime={remainingTime % hourSeconds}
+                                onComplete={(totalElapsedTime) => [
+                                    remainingTime - totalElapsedTime > minuteSeconds
+                                ]}
+                            >
+                                {({ elapsedTime }) =>
+                                    renderTime("minutes", getTimeMinutes(hourSeconds - elapsedTime))
+                                }
+                            </CountdownCircleTimer>
+                        </div>
+                        <div className="col-lg-3 col-md-3 col-sm-6 my-4 justify-content-center d-flex">
+                            <CountdownCircleTimer
+                                {...timerProps}
+                                colors={[["#218380"]]}
+                                duration={minuteSeconds}
+                                initialRemainingTime={remainingTime % minuteSeconds}
+                                onComplete={(totalElapsedTime) => [
+                                    remainingTime - totalElapsedTime > 0
+                                ]}
+                            >
+                                {({ elapsedTime }) =>
+                                    renderTime("seconds", getTimeSeconds(elapsedTime))
+                                }
+                            </CountdownCircleTimer>
+                        </div>
+
+
                     </div>
-                    <div className="row">
-                        <div className="row justify-content-center align-items-center p-5 mx-auto">
-                            <div className="col-lg-3 col-md-3 col-sm-6 my-4 justify-content-center d-flex">
-                                <CountdownCircleTimer
-                                    {...timerProps}
-                                    colors={[["#7E2E84"]]}
-                                    duration={daysDuration}
-                                    initialRemainingTime={remainingTime}
-                                >
-                                    {({ elapsedTime }) =>
-                                        renderTime("days", getTimeDays(daysDuration - elapsedTime))
-                                    }
-                                </CountdownCircleTimer>
-
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-6 my-4 justify-content-center d-flex">
-                                <CountdownCircleTimer
-                                    {...timerProps}
-                                    colors={[["#D14081"]]}
-                                    duration={daySeconds}
-                                    initialRemainingTime={remainingTime % daySeconds}
-                                    onComplete={(totalElapsedTime) => [
-                                        remainingTime - totalElapsedTime > hourSeconds
-                                    ]}
-                                >
-                                    {({ elapsedTime }) =>
-                                        renderTime("hours", getTimeHours(daySeconds - elapsedTime))
-                                    }
-                                </CountdownCircleTimer>
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-6 my-4 justify-content-center d-flex">
-                                <CountdownCircleTimer
-                                    {...timerProps}
-                                    colors={[["#EF798A"]]}
-                                    duration={hourSeconds}
-                                    initialRemainingTime={remainingTime % hourSeconds}
-                                    onComplete={(totalElapsedTime) => [
-                                        remainingTime - totalElapsedTime > minuteSeconds
-                                    ]}
-                                >
-                                    {({ elapsedTime }) =>
-                                        renderTime("minutes", getTimeMinutes(hourSeconds - elapsedTime))
-                                    }
-                                </CountdownCircleTimer>
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-6 my-4 justify-content-center d-flex">
-                                <CountdownCircleTimer
-                                    {...timerProps}
-                                    colors={[["#218380"]]}
-                                    duration={minuteSeconds}
-                                    initialRemainingTime={remainingTime % minuteSeconds}
-                                    onComplete={(totalElapsedTime) => [
-                                        remainingTime - totalElapsedTime > 0
-                                    ]}
-                                >
-                                    {({ elapsedTime }) =>
-                                        renderTime("seconds", getTimeSeconds(elapsedTime))
-                                    }
-                                </CountdownCircleTimer>
-                            </div>
-
-
-
+                </div>
+                <div className="col-lg-4 p-2">
+                    <div className="row p-4 specialOffering-right">
+                        <div className="specialOffering-right-img">
+                            <h1 className="p-5 customFont"> </h1>
+                            <p className="p-5 my-4"></p>
+                            <p><Link to="/tours" className="btn btn-warning w-10 mx-auto text-white fw-bold">More</Link></p>
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4  ">
-                    <div className="row p-4 specialOffering-right">
-                        <h2 className="m-5 customFont">Special Tips</h2>
-                        <Link to="" className="btn btn-success">More</Link>
-                    </div>
-                    <div className="row p-4 mt-5 specialOffering-right">
-                        <h2 className="m-5 customFont">Special Tips</h2>
-                        <Link to="" className="btn btn-success">More</Link>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <button className="btn btn-success my-3">View All Offers</button>
             </div>
         </div>
     );

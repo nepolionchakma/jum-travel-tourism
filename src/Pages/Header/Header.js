@@ -21,10 +21,11 @@ const Header = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="mx-auto">
-                                <Nav.Link className="text-white" as={HashLink} to="/home#doctors">Destinations</Nav.Link>
+
                                 <Nav.Link className="text-white" as={HashLink} to="/tours">Tours</Nav.Link>
                                 <Nav.Link className="text-white" as={HashLink} to="/my-order">MyOrder</Nav.Link>
                                 <Nav.Link className="text-white" as={HashLink} to="/blogs">Blogs</Nav.Link>
+                                <Nav.Link className="text-white" as={HashLink} to="/manage-services">Manage Service</Nav.Link>
                                 <Nav.Link className="text-white" as={HashLink} to="/add-service">Add Service</Nav.Link>
 
                             </Nav>

@@ -10,7 +10,7 @@ const ChooseTour = () => {
     return (
         <div className="p-5 chooseTour">
             <div className="col-lg-6 mx-auto text-center text-white">
-                <h2 className="fw-bold">Choose Tour</h2>
+                <h1 className="customFont ws">Choose Tour</h1>
                 <h5 >Find your next travel adventure and make it memorable. Explore wildlife, enjoy seaside or book a cruise tour. Check out our popular destinations.</h5>
             </div>
             <div className="d-flex justify-content-evenly p-5 text-white">

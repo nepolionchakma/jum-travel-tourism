@@ -1,16 +1,22 @@
-import React from 'react';
-import useFirebase from '../../Hooks/useFirebase';
+import React, { useEffect, useState } from 'react';
 import "./Blogs.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock, faComment } from '@fortawesome/free-solid-svg-icons';
 
 const Blogs = () => {
-    const { services } = useFirebase();
-
+    const [services, setServices] = useState([]);
+    useEffect(() => {
+        fetch("./fakedata.json")
+            .then(res => res.json())
+            .then(data => setServices(data))
+    }, []);
+    // console.log(services)
     return (
         <div className="p-5 blogs">
 
             <div className=" text-center text-warning">
                 <div className="col-lg-6 mx-auto text-center ">
-                    <h2 className="fw-bold">Blog Posts</h2>
+                    <h1 className="customFont ws">Blog Posts</h1>
                     <h5>One inspiring story is worth traveling. Discover more about local food, tradition and history. Read the stories that make you want to travel.</h5>
                 </div>
             </div>
@@ -22,18 +28,27 @@ const Blogs = () => {
                         </div>
                     </div>
                     :
-                    <div className="row p-5 m-0">
+                    <div className="row  m-0">
 
                         <div className="row">
                             {
                                 services.map(service =>
                                     <div
-                                        key={service.key} className="col-lg-3">
-                                        <div>
-                                            <img src={service.img} alt="" />
-                                            <h3>{service.name}</h3>
-                                            <h6>{service.date}</h6>
-                                            <h6>{service.comment}</h6>
+                                        key={service.id}
+                                        className="col-lg-3 p-0">
+                                        <div className="shadow m-3">
+                                            <div className="">
+                                                <img src={service.img} alt="" />
+                                                <div className="p-3">
+                                                    <h3 className="limit-2 mt-2">{service.name}</h3>
+                                                    <p className="limit-4 text-start">{service.details}</p>
+                                                    <div className="d-flex justify-content-between align-items-center align-self-center ">
+                                                        <button className="btn btn-success">More</button>
+                                                        <h6 className="my-2"><FontAwesomeIcon className="text-warning" icon={faClock} /> {service.date}</h6>
+                                                        <h6 className="my-2"><FontAwesomeIcon className="text-warning" icon={faComment} />{service.comment}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 )

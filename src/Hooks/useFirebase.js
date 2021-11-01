@@ -134,7 +134,7 @@ const useFirebase = () => {
     // all fake data
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://safe-savannah-74547.herokuapp.com/services")
             .then(res => res.json())
             .then(data => setServices(data))
     }, []);

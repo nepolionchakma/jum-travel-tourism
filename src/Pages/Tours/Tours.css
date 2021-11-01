@@ -19,7 +19,6 @@
 }
 .tourImg span {
     position: absolute;
-    left: 4%;
     z-index: 1;
     color: red;
     font-size: 20px;
@@ -38,4 +37,7 @@
 .orderNowSticky{
     position: sticky;
     top: 10em;
+}
+.bb{
+    border-bottom: 1px solid #dddddd;
 }

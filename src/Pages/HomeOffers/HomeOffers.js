@@ -7,7 +7,7 @@ import "./HomeOffers.css"
 const HomeOffers = () => {
 
     const { services } = useFirebase();
-
+    const sliceData = services.slice(0, 6);
     return (
         <div className="homeOffers">
             {
@@ -18,14 +18,14 @@ const HomeOffers = () => {
                         </div>
                     </div> :
                     <div className="row p-5 m-0">
-                        <div>
-                            <h4>Modern & Beautiful</h4>
-                            <h1>Explore the World for Yourself</h1>
+                        <div className="text-warning">
+                            <h1 className="customFont ws">Modern & Beautiful</h1>
+                            <h1 className="fw-bold mb-4">Explore the World for Yourself</h1>
                         </div>
                         {
-                            services.map(service =>
+                            sliceData.map(service =>
                                 <HomeOffer
-                                    key={service.key}
+                                    key={service._id}
                                     service={service}
                                 ></HomeOffer>
                             )

@@ -10,8 +10,8 @@ const MyOrder = () => {
     const { services } = useFirebase();
     const [cart, setCart] = useCart(services);
 
-    const handleRemove = key => {
-        const newCart = cart.filter(service => service.key !== key);
+    const handleRemove = _id => {
+        const newCart = cart.filter(service => service._id !== _id);
         setCart(newCart);
     }
     return (
@@ -24,7 +24,7 @@ const MyOrder = () => {
                 <div className="col-lg-8 ">
                     {
                         cart.map(service => <ReviewItem
-                            key={service.key}
+                            key={service._id}
                             service={service}
                             handleRemove={handleRemove}
                         ></ReviewItem>)

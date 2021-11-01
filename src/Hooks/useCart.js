@@ -8,23 +8,13 @@ const useCart = () => {
     const { services } = useFirebase();
     useEffect(() => {
         const savedCart = getStoredCart();
-        // const keys = Object.keys(savedCart);
-        // fetch('http://localhost:5000/services/byKeys', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(keys)
-        // })
-        //     .then(res => res.json())
-        //     .then(services => {
         if (services.length) {
             const storedCart = [];
-            for (const key in savedCart) {
-                const addedProduct = services.find(service => service.key === key);
+            for (const _id in savedCart) {
+                const addedProduct = services.find(service => service._id === _id);
                 if (addedProduct) {
                     // set quantity
-                    const quantity = savedCart[key];
+                    const quantity = savedCart[_id];
                     addedProduct.quantity = quantity;
                     storedCart.push(addedProduct);
                 }
@@ -43,10 +33,12 @@ const useCart = () => {
         const newCart = [...cart, service];
         setCart(newCart);
         // local storage
-        addToDb(service.key);
+        addToDb(service._id);
     }
-
-
+    // const handleRemove = id => {
+    //     const newCart = cart.filter(service => service._id !== id);
+    //     setCart(newCart);
+    // }
 
     return [cart, setCart, handleCart];
 }

@@ -1,26 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import useCart from '../../Hooks/useCart';
+import useFirebase from '../../Hooks/useFirebase';
+import Cart from '../Cart/Cart';
 import "./TourBooking.css"
 
 
 const Details = () => {
-
+    const [cart, setCart, handleCart, handleRemove] = useCart();
     const { id } = useParams();
     const [service, setService] = useState();
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${id}`)
+        fetch(`https://safe-savannah-74547.herokuapp.com/services/${id}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
 
 
-    const [quantity, setQuantity] = useState(1);
-    const increaseQuantity = () => setQuantity(quantity + 1)
-    const decreaseQuantity = () => {
-        if (quantity > 1) {
-            setQuantity(quantity - 1)
-        }
-    }
 
 
     return (
@@ -40,33 +36,28 @@ const Details = () => {
                             <div className="col-lg-4 tourBooking py-5">
                                 <div className="orderNowSticky my-4">
                                     <h5>Price : ${service.price}</h5>
-                                    <h6 className="fw-bold p-3">Quantity:</h6>
-                                    <div className="border d-flex my-4">
-                                        <button className="btn btn-white fw-bold border-end fs-3 " onClick={increaseQuantity}>+</button>
-                                        <h4 className="fw-bold p-3 m-0">{quantity}</h4>
-                                        <button className="btn btn-white fw-bold border-start fs-3 " onClick={decreaseQuantity}>-</button>
 
-
-
-                                    </div>
-                                    <button className="btn border">Remove</button>
+                                    <button onClick={() => handleRemove(service._id)} className="btn btn-success">Remove</button>
+                                    <button onClick={() => handleCart(service)} className="btn btn-success px-3 py-1 mt-3">add cart</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 orderNow2">
+                    <div className="col-lg-4 orderNow d-flex my-5">
                         <div className="orderNowSticky">
-                            <h5 className="my-5">Order Now</h5>
 
-                            <h5>{quantity}</h5>
-                            <h4 className="mx-4 fw-bold">Total : {quantity * service.price}</h4>
-                            <hr />
-                            <button className="btn btn-success">Place To Order</button>
+                            <Cart
+                                cart={cart}
+                            ></Cart>
                         </div>
                     </div>
                 </div>
                 :
-                <div><h5>hello</h5></div>
+                <div className="d-flex justify-content-center py-5">
+                    <div className="spinner-border  text-warning" role="status">
+                        <span className="sr-only"></span>
+                    </div>
+                </div>
             }
         </div>
     );

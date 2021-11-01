@@ -15,9 +15,9 @@ const Cart = (props) => {
     }
 
     return (
-        <div>
-            <h5 className="my-5">Order Now</h5>
-            <h4>Item : {totalQuantity}</h4>
+        <div className="pb-4">
+            <h3 className="my-5">Orders Summary</h3>
+            <h4>Items : {totalQuantity}</h4>
             <hr />
             <h4>Total : {total}$</h4>
             <Link to="/my-order" className="btn btn-success">Review My Orders</Link>

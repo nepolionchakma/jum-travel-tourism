@@ -16,6 +16,7 @@ import TourBooking from './Pages/TourBooking/TourBooking';
 import MyOrder from './Pages/MyOrder/MyOrder';
 import AddService from './Pages/AddService/AddService';
 import ManageServices from './Pages/ManageServices/ManageServices';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
             </Route>
             <Route path="/add-service">
               <AddService></AddService>
+            </Route>
+            <Route path="/blogs">
+              <Blogs></Blogs>
             </Route>
             <Route path="/manage-services">
               <ManageServices></ManageServices>
