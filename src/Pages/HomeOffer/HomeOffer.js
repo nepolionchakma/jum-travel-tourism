@@ -4,9 +4,10 @@ import { faPhoneVolume, faStar, faStarHalfAlt } from "@fortawesome/free-solid-sv
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import "./HomeOffer.css"
+import { Link } from 'react-router-dom';
 
 const HomeOffer = (props) => {
-    const { name, img, price } = props.service
+    const { name, img, price, _id } = props.service
     return (
         <div className="col-lg-4 homeOffer ">
 
@@ -22,7 +23,7 @@ const HomeOffer = (props) => {
                     </div>
 
                     <div className="d-flex justify-content-evenly align-items-center">
-                        <button className="btn btn-success">Booking Now</button>
+                        <Link to={`/services/${_id}`} className="btn btn-success">Booking Now</Link>
                         <h5 className="my-auto">${price}</h5>
                         <div>
                             <FontAwesomeIcon className="text-warning" icon={faStar} />

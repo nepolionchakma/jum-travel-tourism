@@ -1,17 +1,33 @@
-import { useEffect, useState } from 'react';
+// const cartData =()=>{
+//     const { cart } = props;
+//     console.log(cart)
+
+//     let totalQuantity = 0;
+//     let total = 0;
+//     for (const service of cart) {
+//         if (!service.quantity) {
+//             service.quantity = 1;
+//         }
+//         total = total + service.price * service.quantity;
+//         totalQuantity = totalQuantity + service.quantity;
+//     }
+// }
+
+import { useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
+import Tours from '../Tours/Tours';
 import "./TourBooking.css"
 
 
 const Details = () => {
-
-    const { id } = useParams();
-    const [service, setService] = useState();
-    useEffect(() => {
-        fetch(`http://localhost:5000/services/${id}`)
-            .then(res => res.json())
-            .then(data => setService(data))
-    }, [])
+    // const { cart,service,services } = Tours()
+    // console.log(cart,service,services)
+    const { key } = useParams();
+    const { services } = useAuth();
+    const service = services.find(ser => ser.key === key);
+    console.log(service)
 
 
     const [quantity, setQuantity] = useState(1);
@@ -61,7 +77,7 @@ const Details = () => {
                             <h5>{quantity}</h5>
                             <h4 className="mx-4 fw-bold">Total : {quantity * service.price}</h4>
                             <hr />
-                            <button className="btn btn-success">Place To Order</button>
+                            <Link to="/my-order" className="btn btn-success">Place To Order</Link >
                         </div>
                     </div>
                 </div>

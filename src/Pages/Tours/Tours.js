@@ -1,19 +1,16 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import useAuth from '../../Hooks/useAuth';
+import useCart from '../../Hooks/useCart';
+import Cart from '../Cart/Cart';
 import Tour from '../Tour/Tour';
 import "./Tours.css"
 
+
 const Tours = () => {
     const { services } = useAuth();
-    console.log(services)
-    const [cart, setCart] = useState([]);
+    const [cart, handleCart] = useCart();
 
-    const handleCart = (service) => {
-        // console.log(service)
-        const newCart = [...cart, service];
-        setCart(newCart);
-    }
     return (
         <div>
             <div className="tourSearchBanner">
@@ -26,7 +23,7 @@ const Tours = () => {
                     {services.length === 0 ?
                         <div className="d-flex justify-content-center py-5">
                             <div className="spinner-border  text-warning" role="status">
-                                <span className="sr-only">Loading...</span>
+                                <span className="sr-only"></span>
                             </div>
                         </div>
                         :
@@ -35,7 +32,7 @@ const Tours = () => {
                             {
                                 services.map(service =>
                                     <Tour
-                                        key={service.id}
+                                        key={service.key}
                                         service={service}
                                         handleCart={handleCart}
                                     >
@@ -48,11 +45,11 @@ const Tours = () => {
                 </div>
                 <div className="col-lg-4 orderNow d-flex my-5">
                     <div className="orderNowSticky">
-                        <h5 className="my-5">Order Now</h5>
-                        <h4>Item : {cart.length}</h4>
-                        <hr />
-                        <h4>Total : 500$</h4>
-                        <button className="btn btn-success">Place To Order</button>
+                        <Cart
+                            cart={cart}
+                        ></Cart>
+
+
                     </div>
                 </div>
             </div>

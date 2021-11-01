@@ -1,47 +1,45 @@
+
 import React from 'react';
-import useAuth from '../../Hooks/useAuth';
-import "./MyOrder.css"
+import useCart from '../../Hooks/useCart';
+import useFirebase from '../../Hooks/useFirebase';
+import Cart from '../Cart/Cart';
+import ReviewItem from '../ReviewItem/ReviewItem';
+
 
 const MyOrder = () => {
+    const { services } = useFirebase();
+    const [cart, setCart] = useCart(services);
 
-    const { services } = useAuth();
-    console.log(services)
+    const handleRemove = key => {
+        const newCart = cart.filter(service => service.key !== key);
+        setCart(newCart);
+    }
     return (
         <div>
             <div className="tourSearchBanner">
                 <h2 className="text-start">Tour Search</h2>
             </div>
 
-            <div className="row m-0 text-">
+            <div className="row m-0 p-5">
                 <div className="col-lg-8 ">
-                    <div className="row p-5 ">
-                        {services.length === 0 ?
-                            <div className="d-flex justify-content-center py-5">
-                                <div className="spinner-border  text-warning" role="status">
-                                    <span className="sr-only">Loading...</span>
-                                </div>
-                            </div>
-                            :
-                            <div className="row p-2 shadow">
+                    {
+                        cart.map(service => <ReviewItem
+                            key={service.key}
+                            service={service}
+                            handleRemove={handleRemove}
+                        ></ReviewItem>)
+                    }
 
-                                <h4>hello</h4>
-                            </div>
-                        }
-                    </div>
                 </div>
-                <div className="col-lg-3 p-4 orderNow d-flex m-5">
+                <div className="col-lg-4 orderNow d-flex my-5">
                     <div className="orderNowSticky">
-                        <h5 className="my-5">Order Now</h5>
-                        <h4>Item : 1</h4>
-                        <hr />
-                        <h4>Total : 500$</h4>
-                        <button className="btn btn-success">Proceed to Checkout</button>
+
+                        <Cart
+                            cart={cart}
+                        ></Cart>
                     </div>
                 </div>
-
             </div>
-
-
 
 
         </div>

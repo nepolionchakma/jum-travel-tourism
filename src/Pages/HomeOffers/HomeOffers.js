@@ -1,16 +1,13 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import useFirebase from '../../Hooks/useFirebase';
 import HomeOffer from '../HomeOffer/HomeOffer';
 import "./HomeOffers.css"
 
-const Offer = () => {
-    const [services, setServices] = useState([]);
-    useEffect(() => {
-        fetch("./fakedata.json")
-            .then(res => res.json())
-            .then(data => setServices(data))
-    })
+const HomeOffers = () => {
+
+    const { services } = useFirebase();
+
     return (
         <div className="homeOffers">
             {
@@ -28,13 +25,13 @@ const Offer = () => {
                         {
                             services.map(service =>
                                 <HomeOffer
-                                    key={service.id}
+                                    key={service.key}
                                     service={service}
                                 ></HomeOffer>
                             )
                         }
                         <div>
-                            <h4 className="btn btn-success my-3">View All</h4>
+                            <Link to="/tours" className="btn btn-success my-3">View All</Link>
                         </div>
                     </div>
             }
@@ -42,4 +39,4 @@ const Offer = () => {
     );
 };
 
-export default Offer;
+export default HomeOffers;

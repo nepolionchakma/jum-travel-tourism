@@ -1,15 +1,10 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import useFirebase from '../../Hooks/useFirebase';
 import "./Blogs.css"
 
 const Blogs = () => {
-    const [services, setServices] = useState([]);
-    useEffect(() => {
-        fetch("./fakedata.json")
-            .then(res => res.json())
-            .then(data => setServices(data))
-    })
+    const { services } = useFirebase();
+
     return (
         <div className="p-5 blogs">
 
@@ -20,31 +15,31 @@ const Blogs = () => {
                 </div>
             </div>
             <div>
-                {
-                    services.length === 0 ?
-                        <div className="d-flex justify-content-center py-5">
-                            <div className="spinner-border  text-warning" role="status">
-                                <span className="sr-only"></span>
-                            </div>
-                        </div> :
-                        <div className="row p-5 m-0">
-
-                            <div className="row">
-                                {
-                                    services.map(service =>
-                                        <div
-                                            key={service.id} className="col-lg-3">
-                                            <div>
-                                                <img src={service.img} alt="" />
-                                                <h3>{service.name}</h3>
-                                                <h6>{service.date}</h6>
-                                                <h6>{service.comment}</h6>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            </div>
+                {services?.length === 0 ?
+                    <div className="d-flex justify-content-center py-5">
+                        <div className="spinner-border  text-warning" role="status">
+                            <span className="sr-only"></span>
                         </div>
+                    </div>
+                    :
+                    <div className="row p-5 m-0">
+
+                        <div className="row">
+                            {
+                                services.map(service =>
+                                    <div
+                                        key={service.key} className="col-lg-3">
+                                        <div>
+                                            <img src={service.img} alt="" />
+                                            <h3>{service.name}</h3>
+                                            <h6>{service.date}</h6>
+                                            <h6>{service.comment}</h6>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
                 }
             </div>
         </div>

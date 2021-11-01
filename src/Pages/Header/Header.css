@@ -1,3 +1,11 @@
 .header{
-    background-color: rgb(255, 160, 71);
+    background-color: rgb(33, 37, 41)
+    ;
+}
+.header a{
+    color: white;
+    text-decoration: none;
+}
+.myLogo{
+    
 }

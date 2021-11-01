@@ -132,28 +132,14 @@ const useFirebase = () => {
 
 
     // all fake data
-    const [services, setService] = useState([]);
+    const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch("./fakedata.json")
+        fetch("http://localhost:5000/services")
             .then(res => res.json())
-            .then(data => setService(data))
+            .then(data => setServices(data))
     }, []);
+
     console.log(services)
-
-
-    // const [doctors, setDoctor] = useState([]);
-    // useEffect(() => {
-    //     fetch("./fakedoctorsdata.json")
-    //         .then(res => res.json())
-    //         .then(data => setDoctor(data))
-    // }, []);
-    // const [blogs, setBlog] = useState([]);
-    // useEffect(() => {
-    //     fetch("./fakepostsdata.json")
-    //         .then(res => res.json())
-    //         .then(data => setBlog(data))
-    // }, []);
-
 
     return {
         user,
@@ -166,20 +152,14 @@ const useFirebase = () => {
         handleGithubSignIn,
         handleSignOut,
         services,
-        // success,
-        // doctors,
-        // isLogIn,
-        // toggleLogIn,
+        setServices,
         forgetPassword,
-        // blogs,
         handleSignIn,
         loginSuccess,
         emailError,
         passwordError,
-        // errorpassempty,
-        // errorEmail,
         errorpass, clearError, logInUser,
-        setSuccessLogin, setError, setUser, successLogin
+        setSuccessLogin, setError, setUser, successLogin,
     }
 
 }

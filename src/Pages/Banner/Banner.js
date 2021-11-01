@@ -13,7 +13,7 @@ const Banner = () => {
                 <Carousel.Item interval={3000}>
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/kHvBs3T/slide1.jpg"
+                        src=""
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -24,7 +24,7 @@ const Banner = () => {
                 <Carousel.Item interval={500}>
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/M6MgCTf/slide2.jpg"
+                        src=""
                         alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -35,7 +35,7 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/b28sC7g/slide3.jpg"
+                        src=""
                         alt="Third slide"
                     />
                     <Carousel.Caption>
