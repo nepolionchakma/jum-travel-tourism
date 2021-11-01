@@ -9,7 +9,7 @@ import "./Tours.css"
 
 const Tours = () => {
     const { services } = useAuth();
-    const [cart, handleCart] = useCart();
+    const [cart, setCart, handleCart] = useCart();
 
     return (
         <div>
