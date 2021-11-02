@@ -1,5 +1,4 @@
 import React from 'react';
-import useCart from '../../Hooks/useCart';
 
 const ReviewItem = (props) => {
     const { name, price, quantity, img, _id } = props.service;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
 import HomeOffer from '../HomeOffer/HomeOffer';
 import "./HomeOffers.css"
@@ -18,7 +17,7 @@ const HomeOffers = () => {
                         </div>
                     </div> :
                     <div className="row p-5 m-0">
-                        <div className="text-warning">
+                        <div className="text-color">
                             <h1 className="customFont ws">Modern & Beautiful</h1>
                             <h1 className="fw-bold mb-4">Explore the World for Yourself</h1>
                         </div>
@@ -30,9 +29,7 @@ const HomeOffers = () => {
                                 ></HomeOffer>
                             )
                         }
-                        <div>
-                            <Link to="/tours" className="btn btn-success my-3">View All</Link>
-                        </div>
+
                     </div>
             }
         </div>

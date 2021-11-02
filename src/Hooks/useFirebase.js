@@ -158,7 +158,7 @@ const useFirebase = () => {
         loginSuccess,
         emailError,
         passwordError,
-        errorpass, clearError, logInUser,
+        errorpass, clearError, logInUser, success,
         setSuccessLogin, setError, setUser, successLogin,
     }
 

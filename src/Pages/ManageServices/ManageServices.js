@@ -26,14 +26,12 @@ const ManageServices = () => {
 
     return (
         <div className="row m-0 p-5">
-            <h1 className="my-5 customFont text-warning">all Services</h1>
+            <h1 className="my-5 customFont text-color">all Services</h1>
             {
                 services.map(service =>
                     <div
                         key={service._id} className="col-lg-3"
                     >
-
-
 
                         <div className=" p-4 m-0 shadow">
                             <div className="tourImg">

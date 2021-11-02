@@ -25,8 +25,8 @@ const Tour = (props) => {
                 <h6><span className="fs-3">Price : {price}$</span>/Per Person</h6>
                 <div className="d-flex justify-content-evenly  p-2 ">
 
-                    <Link to={`/tour-booking/${_id}`}>
-                        <button className="btn btn-success px-3 py-1 mt-3">Details</button></Link>
+
+                    <Link to={`/services/${_id}`} className="btn btn-success px-3 py-1 mt-3">Details</Link>
                     <button onClick={() => props.handleCart(props.service)} className="btn btn-success px-3 py-1 mt-3">add cart</button>
 
                 </div>

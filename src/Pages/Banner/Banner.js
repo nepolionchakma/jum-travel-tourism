@@ -13,34 +13,34 @@ const Banner = () => {
                 <Carousel.Item interval={3000}>
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/kD22MqG/slide1.jpg"
+                        src="https://i.ibb.co/fXsWRvR/hallstatt-3609863.jpg"
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>Mont Blanc</h3>
-                        <p>Montblanc International is a German manufacturing company of luxury goods, based in Hamburg. The company was known as Simplizissiumus-Füllhalter in 1906, then changed its name to Simplo Filler Pen Co. GmbH in 1907, and was incorporated under that name in 1908. Its current name was adopted in 1934</p>
+                        <h3 className="fw-bold">Summer Hallstatt Austria</h3>
+                        <p>Hallstatt became rich in Austria few hundreds of years ago because of its salt mines</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={500}>
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/Jyq8MfP/slide2.jpg"
+                        src="https://i.ibb.co/xhMnySq/london-eye-945497.jpg"
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Paradise Island Koh Rong Cambodia</h3>
+                        <p>The villas are a private tropical hideaway on the island of Koh Rong Sanloem, off the coast of Sihanoukville. The island is less developed.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/fHtrkx0/slide3.jpg"
+                        src="https://i.ibb.co/r2W8gNm/mountains-5526265.jpg"
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h3>Sapa Trekking, Homestay</h3>
+                        <p> Summer / Rainy Season. You can certainly still trek in Sapa during the rainy season, you just need to bring a rain jacket as it is ..</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

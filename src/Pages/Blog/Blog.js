@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import "./Blogs.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faComment } from '@fortawesome/free-solid-svg-icons';
 
-const Blogs = () => {
+const Blog = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch("./fakedata.json")
@@ -11,9 +10,10 @@ const Blogs = () => {
             .then(data => setServices(data))
     }, []);
     // console.log(services)
-
+    const sliceData = services.slice(0, 4);
     return (
         <div >
+
             <div className="p-5 blogs">
                 <div className=" text-center text-color">
                     <div className="col-lg-6 mx-auto text-center ">
@@ -22,7 +22,7 @@ const Blogs = () => {
                     </div>
                 </div>
                 <div>
-                    {services?.length === 0 ?
+                    {sliceData?.length === 0 ?
                         <div className="d-flex justify-content-center py-5">
                             <div className="spinner-border  text-warning" role="status">
                                 <span className="sr-only"></span>
@@ -33,7 +33,7 @@ const Blogs = () => {
 
                             <div className="row">
                                 {
-                                    services.map(service =>
+                                    sliceData.map(service =>
                                         <div
                                             key={service.id}
                                             className="col-lg-3 p-0">
@@ -64,4 +64,4 @@ const Blogs = () => {
     );
 };
 
-export default Blogs;
+export default Blog;

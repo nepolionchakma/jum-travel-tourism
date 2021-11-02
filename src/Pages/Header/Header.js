@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Form, FormControl, Nav, Navbar } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import useAuth from "../../Hooks/useAuth";
@@ -16,17 +16,34 @@ const Header = () => {
         <div className="sticky-top header py-2" >
             <>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Container>
-                        <Link to="/" className="fw-bold fs-4 text-decoration-none myLogo"> <FontAwesomeIcon className="text-warning fs-1" icon={faRoute} /> JUM T&T</Link>
+                    <>
+                        <Link to="/" className="ms-3 fw-bold fs-4 text-decoration-none myLogo customFont"> <FontAwesomeIcon className="text-warning fs-1" icon={faRoute} /> JUM T&T</Link>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="mx-auto">
 
-                                <Nav.Link className="text-white" as={HashLink} to="/tours">Tours</Nav.Link>
-                                <Nav.Link className="text-white" as={HashLink} to="/my-order">MyOrder</Nav.Link>
-                                <Nav.Link className="text-white" as={HashLink} to="/blogs">Blogs</Nav.Link>
-                                <Nav.Link className="text-white" as={HashLink} to="/manage-services">Manage Service</Nav.Link>
-                                <Nav.Link className="text-white" as={HashLink} to="/add-service">Add Service</Nav.Link>
+
+                                {!user?.displayName ?
+                                    <div className="">
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/home">Home</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/blogs">Blogs</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/tours">Tours</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/manage-services">Manage Service</Nav.Link>
+
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/contact-us">Contact Us</Nav.Link>
+                                    </div>
+                                    :
+                                    <div>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/home">Home</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/blogs">Blogs</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/tours">Tours</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/my-order">MyOrder</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/manage-services">Manage Service</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/add-service">Add Service</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/contact-us">Contact Us</Nav.Link>
+                                    </div>
+
+                                }
 
                             </Nav>
                             <Nav>
@@ -44,7 +61,7 @@ const Header = () => {
                                             <Link className="px-1 jum-text p-2 ms-2" to="/login">Login</Link>
                                             <Link className="px-1 jum-text p-2" to="/signup">Signup</Link>
                                         </div> :
-                                        <div>
+                                        <div className="mx-2">
                                             <span className="text-white">Hi,{user.displayName}</span>
                                             <img
                                                 style={{
@@ -60,7 +77,7 @@ const Header = () => {
                                 </div>
                             </Nav>
                         </Navbar.Collapse>
-                    </Container>
+                    </>
                 </Navbar>
 
             </>

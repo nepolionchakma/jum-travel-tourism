@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import useCart from '../../Hooks/useCart';
 import Cart from '../Cart/Cart';
@@ -51,11 +52,10 @@ const Tours = () => {
                             cart={cart}
                         ></Cart>
 
-
+                        <Link to="/my-order" className="btn btn-success m-n-4">All Order</Link>
                     </div>
                 </div>
             </div>
-
 
         </div>
     );

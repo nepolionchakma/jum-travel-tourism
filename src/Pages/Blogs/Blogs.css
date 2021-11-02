@@ -1,3 +1,6 @@
 .blogs img{
     width: 100%;
 }
+.oh{
+    overflow: hidden;
+}

@@ -43,7 +43,7 @@ const SpecialOffers = () => {
         <div className="p-5 specialOffering " >
             <div className="row justify-content-evenly">
                 <div className="col-lg-7 ">
-                    <div className="row justify-content-center align-items-center p-2 mx-auto text-warning">
+                    <div className="row justify-content-center align-items-center p-2 mx-auto text-color">
 
                         <h1 className="customFont mt-5">Special Offers</h1>
                         <p className="">Find Your Perfect Hotels Get the best prices on 20,000+ properties the best prices on</p>
@@ -109,12 +109,12 @@ const SpecialOffers = () => {
 
                     </div>
                 </div>
-                <div className="col-lg-4 p-2">
+                <div to="/tours" className="col-lg-4 p-2">
                     <div className="row p-4 specialOffering-right">
                         <div className="specialOffering-right-img">
                             <h1 className="p-5 customFont"> </h1>
                             <p className="p-5 my-4"></p>
-                            <p><Link to="/tours" className="btn btn-warning w-10 mx-auto text-white fw-bold">More</Link></p>
+                            <p><Link to="/tours" className="btn btn-success w-10 mx-auto text-white fw-bold">View</Link></p>
                         </div>
                     </div>
                 </div>

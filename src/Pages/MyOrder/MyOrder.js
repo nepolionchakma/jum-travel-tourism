@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useCart from '../../Hooks/useCart';
 import useFirebase from '../../Hooks/useFirebase';
 import Cart from '../Cart/Cart';
@@ -37,10 +38,12 @@ const MyOrder = () => {
                         <Cart
                             cart={cart}
                         ></Cart>
+
+                        <Link to="/" className="btn btn-success m-n-4">Confirm</Link>
+                        {/* <Link to="/my-order" className="btn btn-success">Review My Orders</Link> */}
                     </div>
                 </div>
             </div>
-
 
         </div>
     );

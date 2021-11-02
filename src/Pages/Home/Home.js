@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import Blogs from '../Blogs/Blogs';
+import Blog from '../Blog/Blog';
 import ChooseTour from '../ChooseTour/ChooseTour';
 import HomeOffers from '../HomeOffers/HomeOffers';
 import SpecialOffers from '../SpecialOffers/SpecialOffers';
@@ -14,7 +14,7 @@ const Home = () => {
             <SpecialOffers></SpecialOffers>
             <HomeOffers></HomeOffers>
             <ChooseTour></ChooseTour>
-            <Blogs></Blogs>
+            <Blog></Blog>
             <WorkingExperiences></WorkingExperiences>
         </div>
     );

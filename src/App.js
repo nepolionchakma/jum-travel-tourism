@@ -17,6 +17,10 @@ import MyOrder from './Pages/MyOrder/MyOrder';
 import AddService from './Pages/AddService/AddService';
 import ManageServices from './Pages/ManageServices/ManageServices';
 import Blogs from './Pages/Blogs/Blogs';
+import Footer from './Pages/Footer/Footer';
+import Error from './Pages/Error/Error';
+import ContactUs from './Pages/ContactUs/ContactUs';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -34,28 +38,35 @@ function App() {
             <Route path="/tours">
               <Tours></Tours>
             </Route>
-            <Route path="/my-order">
+            <PrivateRoute path="/my-order">
               <MyOrder></MyOrder>
-            </Route>
-            <Route path="/services/:id">
+            </PrivateRoute>
+            <PrivateRoute path="/services/:id">
               <TourBooking></TourBooking>
-            </Route>
+            </PrivateRoute>
             <Route path="/add-service">
               <AddService></AddService>
             </Route>
             <Route path="/blogs">
               <Blogs></Blogs>
             </Route>
-            <Route path="/manage-services">
-              <ManageServices></ManageServices>
+            <Route path="/contact-us">
+              <ContactUs></ContactUs>
             </Route>
+            <PrivateRoute path="/manage-services">
+              <ManageServices></ManageServices>
+            </PrivateRoute>
             <Route path="/signup">
               <SignUp></SignUp>
             </Route>
             <Route path="/login">
               <Login></Login>
             </Route>
+            <Route path="*">
+              <Error></Error>
+            </Route>
           </Switch>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import useCart from '../../Hooks/useCart';
-import useFirebase from '../../Hooks/useFirebase';
 import Cart from '../Cart/Cart';
 import "./TourBooking.css"
 
@@ -14,7 +14,7 @@ const Details = () => {
         fetch(`https://safe-savannah-74547.herokuapp.com/services/${id}`)
             .then(res => res.json())
             .then(data => setService(data))
-    }, [])
+    }, [id])
 
 
 
@@ -34,11 +34,11 @@ const Details = () => {
                                 </div>
                             </div>
                             <div className="col-lg-4 tourBooking py-5">
-                                <div className="orderNowSticky my-4">
+                                <div className="orderNowSticky my-4 mt-5">
                                     <h5>Price : ${service.price}</h5>
 
-                                    <button onClick={() => handleRemove(service._id)} className="btn btn-success">Remove</button>
-                                    <button onClick={() => handleCart(service)} className="btn btn-success px-3 py-1 mt-3">add cart</button>
+                                    <button onClick={() => handleRemove(service._id)} className="btn btn-danger d-block my-3">Remove</button>
+                                    <button onClick={() => handleCart(service)} className="btn btn-success px-3 py-1 mt-3 d-block">add cart</button>
                                 </div>
                             </div>
                         </div>
@@ -49,6 +49,7 @@ const Details = () => {
                             <Cart
                                 cart={cart}
                             ></Cart>
+                            <Link to="/my-order" className="btn btn-success">Review My Orders</Link>
                         </div>
                     </div>
                 </div>

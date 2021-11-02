@@ -16,19 +16,22 @@ const AddService = () => {
             })
     };
     return (
-        <div className="add-service">
-            <h2>Add Service</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("name")} placeholder="Name" />
-                <input {...register("country")} placeholder="Country" />
-                <input type="number"{...register("rate")} placeholder="Rate" />
-                <input {...register("review")} placeholder="Review" />
-                <input type="number" {...register("price")} placeholder="Price" />
-                <input {...register("category")} placeholder="Category" />
-                <textarea  {...register("details")} placeholder="Details" />
-                <input  {...register("img")} placeholder="Image" />
-                <input type="submit" />
-            </form>
+        <div className="add-service m-0">
+            <div className="my-5 mx-0">
+                <h2 className="text-color">Add Service</h2>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input {...register("name")} placeholder="Name" required />
+                    <input {...register("country")} placeholder="Country" required />
+                    <input type="number"{...register("rate")} placeholder="Rate" required />
+                    <input {...register("review")} placeholder="Review" required />
+                    <input type="number" {...register("price")} placeholder="Price" required />
+                    <input {...register("category")} placeholder="Category" required />
+                    <input type="number" step="0" min="0" max="100"{...register("offer")} placeholder="Offer Percentage" required />
+                    <textarea  {...register("details")} placeholder="Details" required />
+                    <input  {...register("img")} placeholder="Image" required />
+                    <input type="submit" />
+                </form>
+            </div>
         </div>
     );
 };
