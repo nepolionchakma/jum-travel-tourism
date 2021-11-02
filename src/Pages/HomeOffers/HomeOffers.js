@@ -6,7 +6,7 @@ import "./HomeOffers.css"
 const HomeOffers = () => {
 
     const { services } = useFirebase();
-    const sliceData = services.slice(0, 6);
+    const sliceData = services.slice(0, 8);
     return (
         <div className="homeOffers">
             {
