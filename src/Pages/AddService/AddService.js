@@ -17,8 +17,8 @@ const AddService = () => {
     };
 
     return (
-        <div className="row add-service m-0">
-            <div className="col-lg-6 my-5 mx-0">
+        <div className=" add-service m-0">
+            <div className=" my-5 mx-0">
                 <h2 className="text-color">Add Service</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("name")} placeholder="Name" required />

@@ -4,11 +4,12 @@ import { faClock, faLocationArrow, faPhoneVolume, faStar, faStarHalfAlt, faTraff
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import "./HomeOffer.css"
+import { Link } from 'react-router-dom';
 
 const HomeOffer = (props) => {
-    const { name, img, price, offer, country, details, duration } = props.service
+    const { name, img, price, offer, country, details, duration, _id } = props.service
     return (
-        <div className="col-lg-3 homeOffer p-0">
+        <div className="col-lg-3 homeOffer m-0 p-0">
 
             <div className="m-3 homeOfferCard border rounded">
 
@@ -18,7 +19,8 @@ const HomeOffer = (props) => {
                 </div>
                 <div className="homeOfferCardIn p-3">
                     <p className="text-start left"><FontAwesomeIcon className="text-warning" icon={faLocationArrow} /> {country}</p>
-                    <h3 className="my-3 text-start limit-1">{name}</h3>
+
+                    <Link to={`/services/${_id}`} className="btn btn-success px-3 py-1 mt-3 my-3 text-start limit-1">{name}</Link>
                     <div className="text-start">
                         <p className="limit-4 fs-5 text-muted">{details}</p>
                     </div>
