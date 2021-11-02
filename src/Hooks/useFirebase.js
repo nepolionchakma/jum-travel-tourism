@@ -139,7 +139,7 @@ const useFirebase = () => {
             .then(data => setServices(data))
     }, []);
 
-    console.log(services)
+    // console.log(services)
 
     return {
         user,

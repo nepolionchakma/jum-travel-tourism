@@ -6,7 +6,7 @@ import { faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/fre
 import "./HomeOffer.css"
 
 const HomeOffer = (props) => {
-    const { name, img, price, offer, country, details } = props.service
+    const { name, img, price, offer, country, details, duration } = props.service
     return (
         <div className="col-lg-3 homeOffer p-0">
 
@@ -34,7 +34,7 @@ const HomeOffer = (props) => {
                     </div>
                     <div className="d-flex justify-content-between align-items-center mt-3  text-muted">
                         {/* <Link to={`/services/${_id}`} className="btn btn-success">Booking Now</Link> */}
-                        <p className="m-0"> <FontAwesomeIcon className="text-warning" icon={faClock} /> 10 Hours</p>
+                        <p className="m-0"> <FontAwesomeIcon className="text-warning" icon={faClock} />{duration} Hours</p>
                         <h5 className="m-0 text-color"><FontAwesomeIcon className="text-warning right" icon={faTrafficLight} /> ${price}</h5>
 
                     </div>
