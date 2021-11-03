@@ -16,6 +16,7 @@ const AddService = () => {
             })
     };
 
+
     return (
         <div className=" add-service m-0">
             <div className=" my-5 mx-0">
@@ -23,7 +24,7 @@ const AddService = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("name")} placeholder="Name" required />
                     <input {...register("country")} placeholder="Country" required />
-                    <input type="number"{...register("rate")} placeholder="Rate" required />
+                    <input type=""{...register("rate")} placeholder="Rate" required />
                     <input {...register("review")} placeholder="Review" required />
                     <input type="number" {...register("price")} placeholder="Price" required />
                     <input type="duration" {...register("duration")} placeholder="Duration (Hours)." required />

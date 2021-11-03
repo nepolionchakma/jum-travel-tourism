@@ -20,7 +20,7 @@ const HomeOffer = (props) => {
                 <div className="homeOfferCardIn p-3">
                     <p className="text-start left"><FontAwesomeIcon className="text-warning" icon={faLocationArrow} /> {country}</p>
 
-                    <Link to={`/services/${_id}`} className="btn btn-success px-3 py-1 mt-3 my-3 text-start limit-1">{name}</Link>
+                    <Link to={`/services/${_id}`} className="text-decoration-none text-dark fs-4 fw-bold my-3 text-start limit-1">{name}</Link>
                     <div className="text-start">
                         <p className="limit-4 fs-5 text-muted">{details}</p>
                     </div>

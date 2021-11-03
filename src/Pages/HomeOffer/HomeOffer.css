@@ -64,9 +64,13 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    line-height: 22px;
-    -webkit-line-clamp: 1;
+    line-height: 25px;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+.homeOfferCardIn:hover a{
+    color: tomato!important;
+    transition: .5s;
 }
 .text-color{
     color:tomato;

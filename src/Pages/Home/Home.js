@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import Blog from '../Blog/Blog';
 import ChooseTour from '../ChooseTour/ChooseTour';
 import HomeOffers from '../HomeOffers/HomeOffers';
+import OurTeam from '../OurTeam/OurTeam';
 import SpecialOffers from '../SpecialOffers/SpecialOffers';
 import WorkingExperiences from '../WorkingExperiences/WorkingExperiences';
 
@@ -16,6 +17,7 @@ const Home = () => {
             <ChooseTour></ChooseTour>
             <Blog></Blog>
             <WorkingExperiences></WorkingExperiences>
+            <OurTeam></OurTeam>
         </div>
     );
 };

@@ -39,7 +39,7 @@ const Header = () => {
                                         <Nav.Link className="text-white d-inline-block" as={HashLink} to="/tours">Tours</Nav.Link>
                                         <Nav.Link className="text-white d-inline-block" as={HashLink} to="/my-order">MyOrder</Nav.Link>
                                         <Nav.Link className="text-white d-inline-block" as={HashLink} to="/manage-services">Manage Service</Nav.Link>
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/add-service">Add Service</Nav.Link>
+                                        {/* <Nav.Link className="text-white d-inline-block" as={HashLink} to="/add-service">Add Service</Nav.Link> */}
                                         <Nav.Link className="text-white d-inline-block" as={HashLink} to="/contact-us">Contact Us</Nav.Link>
                                     </div>
 
@@ -50,7 +50,7 @@ const Header = () => {
                                 <Form className="d-flex">
                                     <FormControl type="search"
                                         placeholder="Search"
-                                        className="me-1"
+                                        className="me-1 p-1"
                                         aria-label="Search"
                                     />
                                     <Button className="btn bg-white">Search</Button>
