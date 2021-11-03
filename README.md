@@ -3,23 +3,23 @@
 On live Link [JUM-T-T](https://jum-t-t.netlify.app/).
 
 ## Available Features:
--Login,Signup,google,github,email
+--Login,Signup,google,github,email
 
--Special Offers Time
+--Special Offers Time
 
 -Best Team
 
--Manage Services 
+--Manage Services 
 
--Add Services
+--Add Services
 
--Private Route
+--Private Route
 
--Database Server (Mongodb)
+--Database Server (Mongodb)
 
--blogs
+--blogs
 
--contact Us
+--contact Us
 
 
 ## Created by :
