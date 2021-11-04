@@ -39,7 +39,7 @@ const MyOrder = () => {
                             cart={cart}
                         ></Cart>
 
-                        <Link to="/" className="btn btn-success m-n-4">Confirm</Link>
+                        <Link to="/place-order" className="btn btn-success m-n-4">Place To Order</Link>
                         {/* <Link to="/my-order" className="btn btn-success">Review My Orders</Link> */}
                     </div>
                 </div>

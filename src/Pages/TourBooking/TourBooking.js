@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import useCart from '../../Hooks/useCart';
 import Cart from '../Cart/Cart';
-import "./TourBooking.css"
+import "./TourBooking.css";
 
 
 const Details = () => {
-    const [cart, setCart, handleCart, handleRemove] = useCart();
+    const [cart, , handleCart] = useCart();
     const { id } = useParams();
     const [service, setService] = useState();
     useEffect(() => {
@@ -17,7 +18,15 @@ const Details = () => {
     }, [id])
 
 
+    // Popup
+    const [show, setShow] = useState(false);
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const added = () => {
+        handleCart(service);
+        handleClose();
+    }
 
     return (
         <div>
@@ -37,8 +46,32 @@ const Details = () => {
                                 <div className="orderNowSticky my-4 mt-5">
                                     <h5>Price : ${service.price}</h5>
 
-                                    <button onClick={() => handleRemove(service._id)} className="btn btn-danger d-block my-3">Remove</button>
-                                    <button onClick={() => handleCart(service)} className="btn btn-success px-3 py-1 mt-3 d-block">add cart</button>
+                                    {/* <button onClick={removeFromDb} className="btn btn-danger d-block my-3">Remove</button> */}
+                                    <>
+                                        <Button className="btn btn-success " onClick={handleShow}>
+                                            Add Cart
+                                        </Button>
+
+                                        <Modal show={show} onHide={handleClose}>
+                                            <Modal.Header closeButton>
+                                                <Modal.Title>Are You Sure ?</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <div>
+                                                    <h2 className="text-start py-2">{service.name}</h2>
+                                                    <img className="w-100" src={service.img} alt="" />
+                                                </div>
+                                            </Modal.Body>
+                                            <Modal.Footer>
+                                                <Button variant="danger" onClick={handleClose}>
+                                                    Cancel
+                                                </Button>
+                                                <Button variant="primary" onClick={added}>
+                                                    add
+                                                </Button>
+                                            </Modal.Footer>
+                                        </Modal>
+                                    </>
                                 </div>
                             </div>
                         </div>

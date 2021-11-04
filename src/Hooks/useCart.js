@@ -36,8 +36,9 @@ const useCart = () => {
         addToDb(service._id);
     }
     // const handleRemove = id => {
-    //     const newCart = cart.filter(service => service._id !== id);
+    //     const newCart = cart.find(service => service._id !== _id);
     //     setCart(newCart);
+    //     removeFromDb(id);
     // }
 
     return [cart, setCart, handleCart];

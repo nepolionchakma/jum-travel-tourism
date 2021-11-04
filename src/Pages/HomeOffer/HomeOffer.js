@@ -7,7 +7,7 @@ import "./HomeOffer.css"
 import { Link } from 'react-router-dom';
 
 const HomeOffer = (props) => {
-    const { name, img, price, offer, country, details, duration, _id } = props.service
+    const { name, img, price, offer, country, details, duration, _id, review } = props.service
     return (
         <div className="col-lg-3 homeOffer m-0 p-0">
 
@@ -32,7 +32,7 @@ const HomeOffer = (props) => {
                         <FontAwesomeIcon className="text-warning" icon={faStar} />
                         <FontAwesomeIcon className="text-warning" icon={faStarHalfAlt} />
 
-                        <span className="ms-2">308 Reviews</span>
+                        <span className="ms-2">{review}</span>
                     </div>
                     <div className="d-flex justify-content-between align-items-center mt-3  text-muted">
                         {/* <Link to={`/services/${_id}`} className="btn btn-success">Booking Now</Link> */}
@@ -41,7 +41,8 @@ const HomeOffer = (props) => {
 
                     </div>
                 </div>
-                <div className="myIcon">
+                <div className="myIcon d-flex m-0 p-0 justify-content-between align-items-center p-2">
+                    <Link to={`/services/${_id}`} className="btn btn-success  fw-bold  text-start limit-1">Book Now</Link>
                     <FontAwesomeIcon className="text-danger mx-2" icon={faFacebook} />
                     <FontAwesomeIcon className="text-danger mx-2" icon={faTwitter} />
                     <FontAwesomeIcon className="text-danger mx-2" icon={faInstagram} />

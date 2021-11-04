@@ -1,0 +1,10 @@
+.confirm-booking form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.confirm-booking input,textarea{
+    width: 80%;
+    margin-bottom: 10px;
+}

@@ -12,6 +12,7 @@ import Button from '@restart/ui/esm/Button';
 const Header = () => {
     // Auth
     const { user, handleSignOut } = useAuth();
+    // console.log(user)    
     return (
         <div className="sticky-top header py-2" >
             <>

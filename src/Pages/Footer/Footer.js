@@ -35,22 +35,17 @@ const Footer = () => {
                         <Link to="" className="d-block text-color text-decoration-none">Our Team</Link>
                     </div>
                     <div className="col-lg-3">
-                        <h3>Support</h3>
+                        <h3>Info</h3>
                         <hr />
                         <Link to="" className="d-block text-color text-decoration-none">Account</Link>
                         <Link to="" className="d-block text-color text-decoration-none">Legal</Link>
                         <Link to="" className="d-block text-color text-decoration-none">Contact</Link>
-                        <Link to="" className="d-block text-color text-decoration-none">Affiliate Program</Link>
-                        <Link to="" className="d-block text-color text-decoration-none">Privacy Policy</Link>
 
 
                     </div>
                     <div className="col-lg-3">
                         <h3>Support</h3>
                         <hr />
-                        <Link to="" className="d-block text-color text-decoration-none">Account</Link>
-                        <Link to="" className="d-block text-color text-decoration-none">Legal</Link>
-                        <Link to="" className="d-block text-color text-decoration-none">Contact</Link>
                         <Link to="" className="d-block text-color text-decoration-none">Affiliate Program</Link>
                         <Link to="" className="d-block text-color text-decoration-none">Privacy Policy</Link>
                     </div>

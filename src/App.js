@@ -21,6 +21,7 @@ import Footer from './Pages/Footer/Footer';
 import Error from './Pages/Error/Error';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -38,12 +39,15 @@ function App() {
             <Route path="/tours">
               <Tours></Tours>
             </Route>
-            <PrivateRoute path="/my-order">
+            <Route path="/my-order">
               <MyOrder></MyOrder>
-            </PrivateRoute>
+            </Route>
             <PrivateRoute path="/services/:id">
               <TourBooking></TourBooking>
             </PrivateRoute>
+            <Route path="/place-order">
+              <PlaceOrder></PlaceOrder>
+            </Route>
             <Route path="/add-service">
               <AddService></AddService>
             </Route>

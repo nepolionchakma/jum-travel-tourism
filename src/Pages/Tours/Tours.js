@@ -10,7 +10,7 @@ import "./Tours.css"
 
 const Tours = () => {
     const { services } = useAuth();
-    const [cart, setCart, handleCart, handleRemove] = useCart();
+    const [cart, , handleCart, handleRemove] = useCart();
 
     return (
         <div>

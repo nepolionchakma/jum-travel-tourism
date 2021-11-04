@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ReviewItem = (props) => {
     const { name, price, quantity, img, _id } = props.service;
     const { handleRemove } = props;
@@ -16,6 +17,7 @@ const ReviewItem = (props) => {
                     <button onClick={() => handleRemove(_id)} className="btn btn-success">Remove</button>
                 </div>
             </div>
+
         </div>
     );
 };
