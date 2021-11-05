@@ -32,7 +32,7 @@ const Details = () => {
         <div>
             {service?.name ?
                 <div className="row m-0 p-5">
-                    <div className="col-lg-8 p-0">
+                    <div className="col-lg-8 col-md-6 col-sm-6 col-12 p-0">
                         <div className="row  m-0">
                             <div className="details-img col-lg-8">
                                 <img className="bg-danger p-3 rounded w-100" src={service.img} alt="" />
@@ -76,8 +76,8 @@ const Details = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 orderNow d-flex my-5">
-                        <div className="orderNowSticky">
+                    <div className="col-lg-4 col-md-6 col-sm-6 col-12 orderNow d-flex ">
+                        <div className="orderNowSticky py-3">
 
                             <Cart
                                 cart={cart}

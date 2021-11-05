@@ -19,7 +19,7 @@ const Tour = (props) => {
         handleClose();
     }
     return (
-        <div className="col-lg-6 py-4 my-4 ">
+        <div className="col-lg-6 col-md-6 col-sm-6 col-12 py-4 my-4 ">
 
             <div className="shadow  p-3">
                 <div className=" tourImg">

@@ -36,7 +36,7 @@ const Blogs = () => {
                                     services.map(service =>
                                         <div
                                             key={service.id}
-                                            className="col-lg-3 p-0">
+                                            className="col-lg-3 col-md-6 col-sm-6 col-12 p-0">
                                             <div className="shadow m-3 homeOffer oh">
                                                 <div className="">
                                                     <img src={service.img} alt="" />

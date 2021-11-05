@@ -29,32 +29,29 @@ const Blog = () => {
                             </div>
                         </div>
                         :
-                        <div className="row  m-0">
-
-                            <div className="row">
-                                {
-                                    sliceData.map(service =>
-                                        <div
-                                            key={service.id}
-                                            className="col-lg-3 p-0">
-                                            <div className="shadow m-3 homeOffer oh">
-                                                <div className="">
-                                                    <img src={service.img} alt="" />
-                                                    <div className="p-3">
-                                                        <h3 className="limit-2 mt-2">{service.name}</h3>
-                                                        <p className="limit-4 text-start">{service.details}</p>
-                                                        <div className="d-flex justify-content-between align-items-center align-self-center ">
-                                                            <button className="btn btn-success">More</button>
-                                                            <h6 className="my-2"><FontAwesomeIcon className="text-warning" icon={faClock} /> {service.date}</h6>
-                                                            <h6 className="my-2"><FontAwesomeIcon className="text-warning" icon={faComment} />{service.comment}</h6>
-                                                        </div>
+                        <div className="row">
+                            {
+                                sliceData.map(service =>
+                                    <div
+                                        key={service.id}
+                                        className="col-lg-3 col-md-6 col-sm-6 col-12 p-0">
+                                        <div className="shadow m-3 homeOffer oh">
+                                            <div className="">
+                                                <img src={service.img} alt="" />
+                                                <div className="p-3">
+                                                    <h3 className="limit-2 mt-2">{service.name}</h3>
+                                                    <p className="limit-4 text-start">{service.details}</p>
+                                                    <div className="d-flex justify-content-between align-items-center align-self-center ">
+                                                        <button className="btn btn-success">More</button>
+                                                        <h6 className="my-2"><FontAwesomeIcon className="text-warning" icon={faClock} /> {service.date}</h6>
+                                                        <h6 className="my-2"><FontAwesomeIcon className="text-warning" icon={faComment} />{service.comment}</h6>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    )
-                                }
-                            </div>
+                                    </div>
+                                )
+                            }
                         </div>
                     }
                 </div>

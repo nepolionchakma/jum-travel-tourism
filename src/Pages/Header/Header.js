@@ -14,7 +14,7 @@ const Header = () => {
     const { user, handleSignOut } = useAuth();
     // console.log(user)    
     return (
-        <div className="sticky-top header py-2" >
+        <div className="sticky-top header " >
             <>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <>
@@ -25,21 +25,21 @@ const Header = () => {
 
 
                                 {!user?.displayName ?
-                                    <div className="">
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/home">Home</Nav.Link>
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/blogs">Blogs</Nav.Link>
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/tours">Tours</Nav.Link>
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/manage-services">Manage Service</Nav.Link>
+                                    <div className="py-1">
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/home">Home</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/blogs">Blogs</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/tours">Tours</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/manage-services">Manage Service</Nav.Link>
 
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/contact-us">Contact Us</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/contact-us">Contact Us</Nav.Link>
                                     </div>
                                     :
-                                    <div>
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/home">Home</Nav.Link>
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/blogs">Blogs</Nav.Link>
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/tours">Tours</Nav.Link>
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/my-order">MyOrder</Nav.Link>
-                                        <Nav.Link className="text-white d-inline-block" as={HashLink} to="/manage-services">Manage Service</Nav.Link>
+                                    <div className="py-1">
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/home">Home</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/blogs">Blogs</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/tours">Tours</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/my-order">MyOrder</Nav.Link>
+                                        <Nav.Link className="text-white d-inline-block m-1" as={HashLink} to="/manage-services">Manage Service</Nav.Link>
                                         {/* <Nav.Link className="text-white d-inline-block" as={HashLink} to="/add-service">Add Service</Nav.Link> */}
                                         <Nav.Link className="text-white d-inline-block" as={HashLink} to="/contact-us">Contact Us</Nav.Link>
                                     </div>
@@ -48,7 +48,7 @@ const Header = () => {
 
                             </Nav>
                             <Nav>
-                                <Form className="d-flex">
+                                <Form className="d-flex px-2 mx-auto">
                                     <FormControl type="search"
                                         placeholder="Search"
                                         className="me-1 p-1"
@@ -56,13 +56,13 @@ const Header = () => {
                                     />
                                     <Button className="btn bg-white">Search</Button>
                                 </Form>
-                                <div className="d-flex justify-content-evenly ms-auto">
+                                <div className="d-flex justify-content-evenly mx-auto p-2">
                                     {!user?.displayName ?
                                         <div className="d-flex align-items-center mx-auto">
                                             <Link className="px-1 jum-text p-2 ms-2" to="/login">Login</Link>
                                             <Link className="px-1 jum-text p-2" to="/signup">Signup</Link>
                                         </div> :
-                                        <div className="mx-2">
+                                        <div className="mx-2 mx-auto">
                                             <span className="text-white">Hi,{user.displayName}</span>
                                             <img
                                                 style={{

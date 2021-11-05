@@ -5,8 +5,8 @@ import AddService from '../AddService/AddService';
 const ManageServices = () => {
 
     const { services, setServices } = useFirebase();
-    const refreshPage = () => {
-        window.location.reload();
+    const reload = () => {
+        window.location.reload(false);
     }
     const handleDelete = id => {
         const url = `https://safe-savannah-74547.herokuapp.com/services/${id}`;
@@ -16,10 +16,10 @@ const ManageServices = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount) {
-                    // alert("Successfully Delete.")
+
                     const remaining = services.filter(service => services._id !== id);
                     setServices(remaining);
-                    refreshPage();
+                    reload();
                 }
 
             })
@@ -28,12 +28,12 @@ const ManageServices = () => {
     return (
         <div className="row m-0 p-5">
             <h1 className="my-5 customFont text-color">Manage Services</h1>
-            <div className="col-lg-6">
+            <div className="col-lg-6 ">
                 <div className="row">
                     {
                         services.map(service =>
                             <div
-                                key={service._id} className="col-lg-6"
+                                key={service._id} className="col-lg-6 col-md-6 col-sm-6 col-12 my-2"
                             >
 
                                 <div className=" p-4 m-0 shadow">

@@ -10,7 +10,7 @@ const Footer = () => {
             <div className=" m-0 text-start">
                 <hr />
                 <div className=" m-0 row p-5 text-color">
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 col-md-6 col-sm-6 col-12 my-2 col-md-6 col-sm-6 col-12 my-2">
                         <h3>Need Help</h3>
                         <hr />
                         <Link to="" className="d-block text-color text-decoration-none">Call Us</Link>
@@ -26,7 +26,7 @@ const Footer = () => {
                             <FontAwesomeIcon className="text-danger mx-2" icon={faPhoneVolume} />
                         </div>
                     </div>
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 col-md-6 col-sm-6 col-12 my-2">
                         <h3>Company</h3>
                         <hr />
                         <Link to="" className="d-block text-color text-decoration-none">About Us</Link>
@@ -34,7 +34,7 @@ const Footer = () => {
                         <Link to="" className="d-block text-color text-decoration-none">Rewards</Link>
                         <Link to="" className="d-block text-color text-decoration-none">Our Team</Link>
                     </div>
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 col-md-6 col-sm-6 col-12 my-2">
                         <h3>Info</h3>
                         <hr />
                         <Link to="" className="d-block text-color text-decoration-none">Account</Link>
@@ -43,7 +43,7 @@ const Footer = () => {
 
 
                     </div>
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 col-md-6 col-sm-6 col-12 my-2">
                         <h3>Support</h3>
                         <hr />
                         <Link to="" className="d-block text-color text-decoration-none">Affiliate Program</Link>
@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
                 <hr />
                 <div className="text-center py-3">
-                    <Link to="/" className="d-block text-color text-decoration-none">All Reserved By JUM T&T @2021</Link>
+                    <Link to="/" className="d-block text-color text-decoration-none">&copy; All Reserved By JUM T&T 2021</Link>
                 </div>
             </div>
         </div >

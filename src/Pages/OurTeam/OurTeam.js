@@ -9,7 +9,7 @@ const OurTeam = () => {
         <div>
             <div className="row m-0 p-5">
                 <h2 className="customFont my-5 text-color">Meet Our Team Members</h2>
-                <div className="col-lg-3  p-0">
+                <div className="col-lg-3 col-md-6 col-sm-6 col-12 py-3">
                     <div className="mx-3 border">
                         <div>
                             <img
@@ -39,7 +39,7 @@ const OurTeam = () => {
                     </div>
 
                 </div>
-                <div className="col-lg-3  p-0">
+                <div className="col-lg-3 col-md-6 col-sm-6 col-12 py-3">
                     <div className="mx-3 border">
                         <div>
                             <img
@@ -69,7 +69,7 @@ const OurTeam = () => {
                     </div>
 
                 </div>
-                <div className="col-lg-3  p-0">
+                <div className="col-lg-3 col-md-6 col-sm-6 col-12 py-3">
                     <div className="mx-3 border">
                         <div>
                             <img
@@ -99,7 +99,7 @@ const OurTeam = () => {
                     </div>
 
                 </div>
-                <div className="col-lg-3 p-0">
+                <div className="col-lg-3 col-md-6 col-sm-6 col-12 py-3">
                     <div className="mx-3 border">
                         <div>
                             <img

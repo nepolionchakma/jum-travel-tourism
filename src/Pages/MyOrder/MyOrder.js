@@ -18,11 +18,11 @@ const MyOrder = () => {
     return (
         <div>
             <div className="tourSearchBanner">
-                <h2 className="text-start">Tour Search</h2>
+                <h2 className="text-start">My Orders</h2>
             </div>
 
             <div className="row m-0 p-5">
-                <div className="col-lg-8 ">
+                <div className="col-lg-8 col-md-6 col-sm-6 col-12">
                     {
                         cart.map(service => <ReviewItem
                             key={service._id}
@@ -32,7 +32,7 @@ const MyOrder = () => {
                     }
 
                 </div>
-                <div className="col-lg-4 orderNow d-flex my-5">
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12 orderNow d-flex py-5 my-3">
                     <div className="orderNowSticky">
 
                         <Cart
@@ -40,7 +40,7 @@ const MyOrder = () => {
                         ></Cart>
 
                         <Link to="/place-order" className="btn btn-success m-n-4">Place To Order</Link>
-                        {/* <Link to="/my-order" className="btn btn-success">Review My Orders</Link> */}
+
                     </div>
                 </div>
             </div>

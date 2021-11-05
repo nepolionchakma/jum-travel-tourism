@@ -9,12 +9,12 @@ import { Link } from 'react-router-dom';
 const HomeOffer = (props) => {
     const { name, img, price, offer, country, details, duration, _id, review } = props.service
     return (
-        <div className="col-lg-3 homeOffer m-0 p-0">
+        <div className="col-lg-3 col-md-6 col-sm-6 col-12 homeOffer m-0 p-0">
 
             <div className="m-3 homeOfferCard border rounded">
 
                 <div className="homeOfferImg">
-                    <img src={img} alt="" />
+                    <img className="w-100" src={img} alt="" />
                     <p>{offer}%</p>
                 </div>
                 <div className="homeOfferCardIn p-3">
@@ -35,7 +35,7 @@ const HomeOffer = (props) => {
                         <span className="ms-2">{review}</span>
                     </div>
                     <div className="d-flex justify-content-between align-items-center mt-3  text-muted">
-                        {/* <Link to={`/services/${_id}`} className="btn btn-success">Booking Now</Link> */}
+
                         <p className="m-0"> <FontAwesomeIcon className="text-warning" icon={faClock} />{duration} Hours</p>
                         <h5 className="m-0 text-color"><FontAwesomeIcon className="text-warning right" icon={faTrafficLight} /> ${price}</h5>
 

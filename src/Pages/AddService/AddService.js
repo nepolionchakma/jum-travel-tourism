@@ -29,7 +29,7 @@ const AddService = () => {
                     <input type="number" {...register("price")} placeholder="Price" required />
                     <input type="duration" {...register("duration")} placeholder="Duration (Hours)." required />
                     <input {...register("category")} placeholder="Category" required />
-                    <input type="number" step="0" min="0" max="100"{...register("offer")} placeholder="Offer Percentage" required />
+                    <input type="number" step="0" min="0" max="100"{...register("offer")} placeholder="Discount Offer" required />
                     <textarea  {...register("details")} placeholder="Details" required />
                     <input  {...register("img")} placeholder="Image URL" required />
                     <input type="submit" />
